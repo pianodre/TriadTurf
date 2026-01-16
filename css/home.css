@@ -3,17 +3,19 @@
 ================================ */
 
 .logo-image {
-  width: 100px;
+  width: clamp(4rem, 8vw, 6rem);
   height: auto;
-  margin-right: 20px;
+  margin-right: 1.25rem;
 }
 
 .navbar {
   background-color: #000;
   color: #ffffff;
-  padding: 10px 20px;
+  padding: 0.625rem clamp(1rem, 3vw, 1.5rem);
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
 /* ================================
@@ -21,15 +23,16 @@
 ================================ */
 
 nav {
-  margin-left: 24px;
+  margin-left: 1.5rem;
 }
 
 nav ul {
   display: flex;
-  gap: 24px;
+  gap: clamp(1rem, 2vw, 1.5rem);
   list-style: none;
   margin: 0;
   padding: 0;
+  flex-wrap: wrap;
 }
 
 /* ================================
@@ -39,7 +42,8 @@ nav ul {
 .nav-right {
   margin-left: auto;
   display: flex;
-  gap: 16px;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .nav-right a {
@@ -60,18 +64,18 @@ nav ul {
   background-size: cover;
   background-position: center;
   text-align: center;
-  padding: 120px 20px 160px;
-  box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.4); /* Dark overlay */
+  padding: clamp(4rem, 10vw, 7.5rem) clamp(1rem, 3vw, 1.5rem) clamp(6rem, 12vw, 10rem);
+  box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.4);
   position: relative;
   overflow: hidden;
 }
 
 .hero-box {
-  max-width: 1100px;
+  max-width: 70rem;
   margin: 0 auto;
-  padding: 40px 20px;
+  padding: clamp(1.5rem, 4vw, 2.5rem) clamp(1rem, 3vw, 1.5rem);
   border: 1px solid #2a4036;
-  border-radius: 10px;
+  border-radius: 0.625rem;
   background: rgba(15, 31, 22, 0.85);
 }
 
@@ -81,7 +85,7 @@ nav ul {
   left: 0;
   right: 0;
   bottom: 0;
-  height: 120px;
+  height: clamp(4rem, 10vw, 7.5rem);
   background: linear-gradient(to bottom, rgba(15, 31, 22, 0) 0%, #0f1f16 100%);
   pointer-events: none;
 }
@@ -93,56 +97,56 @@ nav ul {
 .feature-split {
   display: flex;
   align-items: center;
-  gap: 80px;
-  max-width: 1200px;
-  margin: 70px auto;
-  padding: 60px 40px;
+  gap: clamp(2rem, 6vw, 5rem);
+  max-width: 75rem;
+  margin: clamp(2rem, 6vw, 4.5rem) auto;
+  padding: clamp(2rem, 5vw, 3.75rem) clamp(1.5rem, 4vw, 2.5rem);
   background-color: #162d22;
-  border-radius: 16px;
+  border-radius: 1rem;
 }
 
 .image-stack {
   width: 55%;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  grid-auto-rows: minmax(220px, 320px);
-  gap: 28px;
+  grid-auto-rows: minmax(12rem, 20rem);
+  gap: clamp(1rem, 2vw, 1.75rem);
 }
 
 .image-stack .img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 14px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+  border-radius: 0.875rem;
+  box-shadow: 0 1.25rem 2.5rem rgba(0,0,0,0.25);
   transition: transform 250ms ease, box-shadow 250ms ease;
-  --img-translate-x: 0px;
-  --img-translate-y: 0px;
+  --img-translate-x: 0;
+  --img-translate-y: 0;
   --img-rotate: 0deg;
   --img-hover-rotate: var(--img-rotate);
   transform: translate(var(--img-translate-x), var(--img-translate-y)) rotate(var(--img-rotate));
 }
 
 .image-stack .img:hover {
-  transform: translate(var(--img-translate-x), calc(var(--img-translate-y) - 8px)) rotate(var(--img-hover-rotate)) scale(1.03);
-  box-shadow: 0 30px 60px rgba(0,0,0,0.35);
+  transform: translate(var(--img-translate-x), calc(var(--img-translate-y) - 0.5rem)) rotate(var(--img-hover-rotate)) scale(1.03);
+  box-shadow: 0 1.875rem 3.75rem rgba(0,0,0,0.35);
 }
 
 .image-stack .img:nth-child(1) {
-  --img-translate-y: 12px;
+  --img-translate-y: 0.75rem;
   --img-rotate: -2deg;
   --img-hover-rotate: -4deg;
 }
 
 .image-stack .img:nth-child(2) {
-  --img-translate-y: -12px;
+  --img-translate-y: -0.75rem;
   --img-rotate: 2deg;
   --img-hover-rotate: 4deg;
 }
 
 .image-stack .img:nth-child(3) {
   grid-column: span 2;
-  --img-translate-y: 8px;
+  --img-translate-y: 0.5rem;
   --img-hover-rotate: 1deg;
 }
 
@@ -152,24 +156,24 @@ nav ul {
 }
 
 .feature-text h3 {
-  font-size: 2rem;
-  margin-bottom: 16px;
-  padding-bottom: 8px;
-  border-bottom: 3px solid #4caf50;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 0.1875rem solid #4caf50;
 }
 
 .feature-text .feature-subtitle {
   font-size: 1rem;
-  margin-left: 14px;
+  margin-left: 0.875rem;
   color: rgba(255, 255, 255, 0.75);
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  margin-bottom: 18px;
+  margin-bottom: 1.125rem;
 }
 
 .feature-text p {
-  font-size: 1.2rem;
-  margin-left: 14px;
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  margin-left: 0.875rem;
   color: rgba(255, 255, 255, 0.92);
 }
 
@@ -182,7 +186,7 @@ nav ul {
   background-size: cover;
   background-position: center;
   text-align: center;
-  padding: 120px 20px 160px;
+  padding: clamp(4rem, 10vw, 7.5rem) clamp(1rem, 3vw, 1.5rem) clamp(6rem, 12vw, 10rem);
   position: relative;
   overflow: hidden;
 }
@@ -200,20 +204,20 @@ nav ul {
   margin: 0;
   z-index: 1;
   text-align: left;
-  margin-left: 80px;
-  max-width: 700px;
+  margin-left: clamp(1.5rem, 6vw, 5rem);
+  max-width: 44rem;
 }
 
 .cleaning-content h2 {
-  font-size: 2rem;
-  margin-bottom: 16px;
-  padding-bottom: 8px;
-  border-bottom: 3px solid #4caf50;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 0.1875rem solid #4caf50;
 }
 
 .cleaning-content p {
-  font-size: 1.2rem;
-  margin-left: 14px;
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  margin-left: 0.875rem;
   color: rgba(255, 255, 255, 0.92);
 }
 
@@ -222,14 +226,14 @@ nav ul {
 ================================ */
 
 .services-overview {
-  padding: 110px 20px 80px;
+  padding: clamp(4rem, 8vw, 7rem) clamp(1rem, 3vw, 1.5rem) clamp(3rem, 6vw, 5rem);
   background: #0b140f;
 }
 
 .section-heading {
   text-align: center;
-  max-width: 780px;
-  margin: 0 auto 50px;
+  max-width: 50rem;
+  margin: 0 auto clamp(2rem, 4vw, 3.125rem);
 }
 
 .section-heading .eyebrow {
@@ -237,37 +241,37 @@ nav ul {
   text-transform: uppercase;
   letter-spacing: 0.35em;
   color: #6fbf73;
-  margin-bottom: 14px;
+  margin-bottom: 0.875rem;
 }
 
 .section-heading h2 {
-  font-size: clamp(2rem, 5vw, 3rem);
+  font-size: clamp(1.75rem, 4vw, 3rem);
   margin: 0;
 }
 
 .services-overview__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 24px;
-  max-width: 1100px;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  gap: clamp(1rem, 2vw, 1.5rem);
+  max-width: 70rem;
   margin: 0 auto;
 }
 
 .service-tile {
   background: #12251b;
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 18px;
-  padding: 24px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+  border-radius: 1.125rem;
+  padding: clamp(1rem, 2vw, 1.5rem);
+  box-shadow: 0 1.25rem 2.5rem rgba(0, 0, 0, 0.25);
   text-align: center;
 }
 
 .service-tile__icon {
-  width: 48px;
-  height: 48px;
-  margin: 0 auto 12px;
-  border: 2px solid rgba(255, 255, 255, 0.4);
-  border-radius: 12px;
+  width: 3rem;
+  height: 3rem;
+  margin: 0 auto 0.75rem;
+  border: 0.125rem solid rgba(255, 255, 255, 0.4);
+  border-radius: 0.75rem;
   display: grid;
   place-items: center;
 }
@@ -291,11 +295,12 @@ nav ul {
 .service-tile__icon[class*="icon-"] {
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 26px;
+  background-size: 1.625rem;
 }
+
 .service-tile h3 {
-  margin: 0 0 8px;
-  font-size: 1.2rem;
+  margin: 0 0 0.5rem;
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
 }
 
 .service-tile p {
@@ -309,28 +314,28 @@ nav ul {
 
 .repairs-section {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 24px;
-  max-width: 1100px;
-  margin: 80px auto;
-  padding: 0 20px;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: clamp(1rem, 2vw, 1.5rem);
+  max-width: 70rem;
+  margin: clamp(3rem, 6vw, 5rem) auto;
+  padding: 0 clamp(1rem, 3vw, 1.5rem);
 }
 
 .repairs-card {
   background: #152820;
   border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 20px;
-  padding: 30px;
-  box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+  border-radius: 1.25rem;
+  padding: clamp(1.25rem, 3vw, 1.875rem);
+  box-shadow: 0 1.5rem 3rem rgba(0,0,0,0.3);
 }
 
 .repairs-card h3 {
-  margin: 0 0 12px;
-  font-size: 1.3rem;
+  margin: 0 0 0.75rem;
+  font-size: clamp(1.1rem, 1.5vw, 1.3rem);
 }
 
 .repairs-card p {
-  margin: 0 0 14px;
+  margin: 0 0 0.875rem;
   color: rgba(255, 255, 255, 0.8);
 }
 
@@ -341,8 +346,8 @@ nav ul {
 }
 
 .repairs-card li {
-  margin-bottom: 8px;
-  padding-left: 18px;
+  margin-bottom: 0.5rem;
+  padding-left: 1.125rem;
   position: relative;
 }
 
@@ -359,36 +364,37 @@ nav ul {
 
 .about-section {
   background: #0f1f16;
-  padding: 120px 20px;
+  padding: clamp(4rem, 10vw, 7.5rem) clamp(1rem, 3vw, 1.5rem);
 }
 
 .about-card {
-  max-width: 900px;
-  margin: 0 auto 50px;
+  max-width: 56rem;
+  margin: 0 auto clamp(2rem, 4vw, 3.125rem);
   text-align: center;
 }
 
 .about-card h3 {
-  font-size: 2rem;
-  margin-bottom: 16px;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  margin-bottom: 1rem;
 }
 
 .about-stats {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 24px;
-  max-width: 1000px;
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  gap: clamp(1rem, 2vw, 1.5rem);
+  max-width: 62rem;
   margin: 0 auto;
+  text-align: center;
 }
 
 .stat-number {
   display: block;
-  font-size: 2.4rem;
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
   color: #6fbf73;
 }
 
 .about-stats p {
-  margin: 8px 0 0;
+  margin: 0.5rem 0 0;
   color: rgba(255, 255, 255, 0.75);
 }
 
@@ -397,22 +403,22 @@ nav ul {
 ================================ */
 
 .process-section {
-  padding: 110px 20px;
+  padding: clamp(4rem, 8vw, 7rem) clamp(1rem, 3vw, 1.5rem);
   background: #08100c;
 }
 
 .process-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 24px;
-  max-width: 1100px;
-  margin: 50px auto 0;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  gap: clamp(1rem, 2vw, 1.5rem);
+  max-width: 70rem;
+  margin: clamp(2rem, 4vw, 3.125rem) auto 0;
 }
 
 .process-grid article {
   background: #14261c;
-  border-radius: 18px;
-  padding: 28px;
+  border-radius: 1.125rem;
+  padding: clamp(1.25rem, 2.5vw, 1.75rem);
   border: 1px solid rgba(255, 255, 255, 0.06);
 }
 
@@ -420,13 +426,13 @@ nav ul {
   display: inline-block;
   font-size: 0.8rem;
   letter-spacing: 0.3em;
-  margin-bottom: 10px;
+  margin-bottom: 0.625rem;
   color: rgba(255, 255, 255, 0.6);
 }
 
 .process-grid h4 {
-  margin: 0 0 10px;
-  font-size: 1.1rem;
+  margin: 0 0 0.625rem;
+  font-size: clamp(1rem, 1.5vw, 1.1rem);
 }
 
 .process-grid p {
@@ -439,30 +445,38 @@ nav ul {
 ================================ */
 
 .cta-panel {
-  margin: 0 auto 120px;
-  max-width: 1100px;
+  margin: 0 clamp(1rem, 3vw, 1.5rem) clamp(4rem, 8vw, 7.5rem);
+  max-width: 70rem;
+  margin-left: auto;
+  margin-right: auto;
   display: grid;
-  grid-template-columns: minmax(0, 2fr) minmax(260px, 1fr);
-  gap: 24px;
-  padding: 40px;
-  border-radius: 24px;
+  grid-template-columns: 1fr;
+  gap: clamp(1rem, 2vw, 1.5rem);
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  border-radius: 1.5rem;
   background: linear-gradient(120deg, #1e3b2c, #0f1f16);
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
+@media (min-width: 48rem) {
+  .cta-panel {
+    grid-template-columns: minmax(0, 2fr) minmax(16rem, 1fr);
+  }
+}
+
 .cta-panel__content h2 {
-  margin: 0 0 12px;
-  font-size: 2.4rem;
+  margin: 0 0 0.75rem;
+  font-size: clamp(1.5rem, 4vw, 2.4rem);
 }
 
 .cta-panel__content p {
-  margin: 0 0 24px;
+  margin: 0 0 1.5rem;
   color: rgba(255, 255, 255, 0.85);
 }
 
 .cta-actions {
   display: flex;
-  gap: 16px;
+  gap: 1rem;
   flex-wrap: wrap;
 }
 
@@ -470,7 +484,7 @@ nav ul {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 14px 24px;
+  padding: 0.875rem 1.5rem;
   border-radius: 999px;
   border: 1px solid transparent;
   font-weight: 600;
@@ -487,11 +501,55 @@ nav ul {
 
 .cta-contact {
   background: rgba(0, 0, 0, 0.2);
-  border-radius: 18px;
-  padding: 24px;
+  border-radius: 1.125rem;
+  padding: clamp(1rem, 2vw, 1.5rem);
 }
 
 .cta-contact p {
-  margin: 0 0 12px;
+  margin: 0 0 0.75rem;
   color: rgba(255, 255, 255, 0.85);
+}
+
+/* ================================
+   RESPONSIVE ADJUSTMENTS
+================================ */
+
+@media (max-width: 60rem) {
+  .feature-split {
+    flex-direction: column;
+  }
+  
+  .image-stack,
+  .feature-text {
+    width: 100%;
+  }
+  
+  .image-stack {
+    grid-auto-rows: minmax(10rem, 16rem);
+  }
+}
+
+@media (max-width: 48rem) {
+  .navbar {
+    justify-content: center;
+  }
+  
+  nav {
+    margin-left: 0;
+    width: 100%;
+    order: 3;
+  }
+  
+  nav ul {
+    justify-content: center;
+  }
+  
+  .nav-right {
+    margin-left: 0;
+  }
+  
+  .cleaning-content {
+    margin-left: 0;
+    max-width: 100%;
+  }
 }
